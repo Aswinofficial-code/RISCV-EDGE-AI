@@ -44,7 +44,7 @@ The objective of this project is to simulate the deployment of a quantized neura
 
 ### Simulated Hardware
 - **Target**: SiFive FE310-G002 RISC-V SoC (32-bit RV32IMAC, 320 MHz, 16KB L1 Instruction Cache, 16KB SRAM, 128Mbit QSPI Flash).
-- **Note**: No physical VSDSquadron PRO board was used; all code was simulated in VSCode.
+- **Note**: No physical VSDSquadron PRO board was used; all code was simulated in Freedom Studio.
 
 ### Software
 - **Visual Studio Code (VSCode)**: IDE for running Python scripts and simulating embedded C code.
