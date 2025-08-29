@@ -51,8 +51,10 @@ The objective of this project is to simulate the deployment of a quantized neura
 - **Python 3.x**: With the following libraries:
   - `tensorflow` (version 2.15.0)
   - `numpy`
-  - `opencv-python`
+  - `matplotlib`
   - `pyserial` (for simulated UART communication)
+  - matplotlib
+
 - **Freedom Studio 3.1.1** (optional): For simulating RISC-V bare-metal code, if applicable.
 - **RISC-V GNU Toolchain** (optional): For compiling C code for RV32IMAC, if used in simulation.
 
@@ -83,8 +85,13 @@ The objective of this project is to simulate the deployment of a quantized neura
 ### 1. Set Up VSCode Environment
 1. Install VSCode and the Python extension.
 2. Install required Python libraries:
-   ```bash
-   pip install tensorflow==2.15.0 numpy opencv-python pyserial
+   `torch
+    torchvision
+    numpy
+    PyYAML
+    tensorboard
+    matplotlib
+    seaborn
    ```
 
 ### 2. Train and Quantize the Model
@@ -95,30 +102,16 @@ The objective of this project is to simulate the deployment of a quantized neura
    ```
    This generates `mnist_quantized_model.tflite` and C-compatible arrays (`mnist_model_params.c` and `mnist_model_params.h`).
 
-### 3. Simulate Image Capture and Preprocessing
-1. Run `cam_capture_image.py` in VSCode to simulate capturing a handwritten digit image (e.g., using a sample image or webcam input):
-   ```bash
-   python src/cam_capture_image.py
-   ```
-2. Preprocess the image using `Image_Processing.py` to crop and resize it to 12x12:
-   ```bash
-   python src/Image_Processing.py
-   ```
 
-### 4. Simulate Inference
-1. Run `send_image_uart.py` to simulate sending the preprocessed image over UART:
-   ```bash
-   python src/send_image_uart.py
-   ```
-2. Simulate the inference process using the generated C code in `main.c`, either within VSCode (if configured for C simulation) or by observing the output of the Python scripts.
-
-### 5. Optional: Simulate in Freedom Studio
+### 3. Optional: Simulate in Freedom Studio
 If you used Freedom Studio for RISC-V simulation:
 1. Open Freedom Studio and import the project.
 2. Clean and build the project:
    - Go to `Project -> Clean...` and `Project -> Build Project`.
 3. Configure the debug launch for simulation, ensuring the executable points to `main.elf`.
 4. Run the simulation and observe output in the Freedom Studio console.
+   
+![Freedom Studio GUI](images/7.png)
 
 ## Model Details
 - **Architecture**:
@@ -128,33 +121,12 @@ If you used Freedom Studio for RISC-V simulation:
 - **Quantization**: 8-bit integer format, reducing model size to ~17.35 KB.
 - **Inference Engine**: Simulated C implementation with `processfclayer` and `ReLUNorm` for efficient integer-only computations.
 
-## Sample Output
-Below is a sample MNIST digit used for testing the quantized neural network:
 
-![MNIST Sample Digit](images/mnist_sample.png)
-
-```
-8-bit Quantized TFLite MNIST Simulation
-By [Your Name]
-Starting MNIST inference...
-Processing input for sample 1
-Starting first layer...
-Processing layer: in=144, out=64
-Applying ReLU and Requantizing first layer...
-Layer1 ReLU range: -96 to 127
-Starting second layer...
-Processing layer: in=64, out=64
-Applying ReLU and Requantizing second layer...
-Layer2 ReLU range: -103 to 127
-Starting final layer...
-Processing layer: in=64, out=10
-Predicted digit: 8, True Label: 8, Status: PASS
-```
 
 ## Model Architecture
 The neural network architecture is visualized below:
+![Neural network architecture ](images/visual.png)
 
-![Model Architecture](images/model_diagram.jpg)
 
 ## Key Learnings
 - **Edge AI Simulation**: Learned to simulate ML model deployment for resource-constrained RISC-V microcontrollers using VSCode.
