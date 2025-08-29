@@ -87,8 +87,7 @@ The objective of this project is to simulate the deployment of a quantized neura
   - `tensorflow` (version 2.15.0)
   - `numpy`
   - `matplotlib`
-  - `pyserial` (for simulated UART communication)
-  - 'matplotlib'
+  - `matplotlib` 
     
 ### 2. Train and Quantize the Model
 1. Open VSCode and navigate to the project directory.
