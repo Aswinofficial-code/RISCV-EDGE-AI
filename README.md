@@ -125,7 +125,7 @@ If you used Freedom Studio for RISC-V simulation:
 
 ## Model Architecture
 The neural network architecture is visualized below:
-![Neural network architecture ](images/visual.png)
+![Neural network architecture ](images/Visual.png)
 
 
 ## Key Learnings
