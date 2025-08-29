@@ -49,7 +49,7 @@ The objective of this project is to simulate the deployment of a quantized neura
 ### Software
 - **Visual Studio Code (VSCode)**: IDE for running Python scripts and simulating embedded C code.
 - **Google Collab**: 
-
+   - [Code](Vssd_2,3,4,5,6.ipynb,vssd_8,9,10,11.ipynb ,)
 
 - **Freedom Studio 3.1.1** (optional): For simulating RISC-V bare-metal code, if applicable.
 - **RISC-V GNU Toolchain** (optional): For compiling C code for RV32IMAC, if used in simulation.
@@ -81,14 +81,12 @@ The objective of this project is to simulate the deployment of a quantized neura
 ### 1. Set Up VSCode Environment
 1. Install VSCode and the Python extension.
 2. Install required Python libraries:
-   ```
   - `tensorflow` (version 2.15.0)
   - `numpy`
   - `matplotlib`
   - `pyserial` (for simulated UART communication)
   - 'matplotlib'
     
-     ```
 ### 2. Train and Quantize the Model
 1. Open VSCode and navigate to the project directory.
 2. Run the `training.py` script to train and quantize the MNIST model:
