@@ -48,11 +48,12 @@ The objective of this project is to simulate the deployment of a quantized neura
 
 ### Software
 - **Visual Studio Code (VSCode)**: IDE for running Python scripts and simulating embedded C code.
-- **Google Collab**: 
-   - [Code-1](Vssd_2,3,4,5,6.ipynb)
-   - [Code-2](vssd_8,9,10,11.ipynb)
-   - [Code-3](vssd_12,13.ipynb)
-   - [Code-4](vssd_16,17.ipynb)
+- **Google Collab**:
+ Code Numbers are according to the Modules
+   - [Code-2,3,4,5,6](Vssd_2,3,4,5,6.ipynb)
+   - [Code-8,9,10,11](vssd_8,9,10,11.ipynb)
+   - [Code-12,13](vssd_12,13.ipynb)
+   - [Code-16,17](vssd_16,17.ipynb)
 
 - **Freedom Studio 3.1.1** (optional): For simulating RISC-V bare-metal code, if applicable.
 - **RISC-V GNU Toolchain** (optional): For compiling C code for RV32IMAC, if used in simulation.
